@@ -8,8 +8,11 @@ import starlightNutshell from "starlight-nutshell";
 import rehypeExternalLinks from "rehype-external-links";
 
 export default defineConfig({
-  // site: 'https://jfrome1.github.io/ntw2029/', // GitHub Pages URL config
-  // base: '/ntw2029/',
+  site: "https://jfrome1.github.io/ntw2029", // GitHub Pages URL config
+  base: import.meta.env.DEV ? "/" : "/ntw2029/",
+  build: {
+    assetsPrefix: "/NTW2029/",
+  },
   integrations: [
     starlight({
       plugins: [
@@ -74,7 +77,7 @@ export default defineConfig({
               items: [
                 "course-ntw2029/resources/evolution/ev-religion",
                 "course-ntw2029/resources/evolution/ev-resources",
-				"course-ntw2029/resources/evolution/nct",
+                "course-ntw2029/resources/evolution/nct",
               ],
             },
             {
@@ -83,7 +86,7 @@ export default defineConfig({
               items: [
                 "course-ntw2029/resources/writing/citations",
                 "course-ntw2029/resources/writing/software",
-				"course-ntw2029/resources/writing/topic-sentences",
+                "course-ntw2029/resources/writing/topic-sentences",
               ],
             },
           ],
