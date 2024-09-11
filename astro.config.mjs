@@ -11,7 +11,7 @@ export default defineConfig({
   site: "https://jfrome1.github.io/ntw2029", // GitHub Pages URL config
   base: import.meta.env.DEV ? "/" : "/ntw2029/",
   build: {
-    assetsPrefix: "/NTW2029/",
+    assetsPrefix: "https://jojokcreator.github.io/NTW2029",
   },
   integrations: [
     starlight({
