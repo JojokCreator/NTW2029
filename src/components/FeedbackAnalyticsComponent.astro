@@ -23,7 +23,7 @@ import "astro-feelback/styles/feelback.css";
 <script>
   declare global {
     interface Window {
-      umami: any;
+      sa_event: any;
     }
   }
 
@@ -36,7 +36,7 @@ import "astro-feelback/styles/feelback.css";
 
       const duration = Date.now() - openTime;
 
-      window.umami.track("inactiveNutshell", {
+      window.sa_event("inactiveNutshell", {
         page: document.title,
         text: link.textContent,
         duration: duration,
@@ -50,7 +50,7 @@ import "astro-feelback/styles/feelback.css";
       const currentMode = link.getAttribute("mode");
 
       if (currentMode === "open") {
-        window.umami.track("openNutshell", {
+        window.sa_event("openNutshell", {
           page: document.title,
           text: link.textContent,
         });
@@ -107,7 +107,7 @@ import "astro-feelback/styles/feelback.css";
       const isExternal = link.target === "_blank";
       const eventName = isExternal ? "externalLinkClick" : "internalLinkClick";
 
-      window.umami.track(eventName, {
+      window.sa_event(eventName, {
         page: document.title,
         text: link.textContent,
         link: link.href,
@@ -164,7 +164,7 @@ import "astro-feelback/styles/feelback.css";
         const totalHeight = document.documentElement.scrollHeight;
 
         if (scrollPosition >= totalHeight / 2) {
-          window.umami.track("read", { page: document.title });
+          window.sa_event("read", { page: document.title });
           readEventTriggered = true;
           window.removeEventListener("scroll", handleScroll);
         }
