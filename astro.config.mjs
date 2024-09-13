@@ -8,8 +8,8 @@ import starlightNutshell from "starlight-nutshell";
 import rehypeExternalLinks from "rehype-external-links";
 
 export default defineConfig({
-  site: "https://jfrome1.github.io/ntw2029", // GitHub Pages URL config
-  base: import.meta.env.DEV ? "/" : "/ntw2029/",
+  site: "https://jfrome1.github.io/NTW2029", // GitHub Pages URL config
+  base: import.meta.env.DEV ? "/" : "/NTW2029/",
   build: {
     assetsPrefix: "https://jojokcreator.github.io/NTW2029",
   },
