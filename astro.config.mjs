@@ -7,6 +7,8 @@ import remarkExternalLinks from "remark-external-links";
 import starlightNutshell from "starlight-nutshell";
 import rehypeExternalLinks from "rehype-external-links";
 
+import compress from "astro-compress";
+
 export default defineConfig({
   site: "https://jfrome1.github.io/NTW2029", // GitHub Pages URL config
   base: import.meta.env.DEV ? "/" : "/NTW2029/",
@@ -102,6 +104,13 @@ export default defineConfig({
           },
         },
       ],
+    }),
+    compress({
+      HTML: {
+        "html-minifier-terser": {
+          removeComments: true,
+        },
+      },
     }),
   ],
   markdown: {
